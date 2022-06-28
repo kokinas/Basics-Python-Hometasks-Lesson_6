@@ -1,15 +1,14 @@
 import time
 import itertools
 class TrafficLight():
-	__color = [['red', 7], ['yellow', 2], ['green', 1]]
-	print(__color[1][1])
-	def running(self, __color):
-		for light in itertools.cycle(__color):
+	color = [['red', 7], ['yellow', 2], ['green', 1]]
+	
+	def running(self):
+		color = TrafficLight.color
+		for light in itertools.cycle(color):
 			print(f'Traffic Light is {light[0]}')
-			print(light[1])
-			time.sleep(3)
-
+			time.sleep(light[1])
 
 lenina_mira = TrafficLight()
-lenina_mira.running('yellow')
+lenina_mira.running()
 
