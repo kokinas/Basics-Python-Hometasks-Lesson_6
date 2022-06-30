@@ -1,52 +1,57 @@
 class Car():
 
-	def __init__(self, speed, color, name, is_police):
-		self.speed = speed
-		self.color = color
-		self.name = name
-		self.is_police = bool(is_police)
+    def __init__(self, speed, color, name, is_police):
+        self.speed = speed
+        self.color = color
+        self.name = name
+        self.is_police = bool(is_police)
 
-	def go(self):
-		print(f'The car {self.name} went')
+    def go(self):
+        print(f'The car {self.name} went')
 
-	def stop(self):
-		print(f'The car {self.name} stopped')
+    def stop(self):
+        print(f'The car {self.name} stopped')
 
-	def turn(self, direction):
-		self.direction = direction
-		print(f'The car {self.name} terned towards {direction} ')
+    def turn(self, direction):
+        self.direction = direction
+        print(f'The car {self.name} terned towards {direction} ')
 
-	def show_speed(self):
-		print(f"{self.name}'s speed is {self.speed}")
+    def show_speed(self):
+        print(f"{self.name}'s speed is {self.speed}")
+
 
 class TownCar(Car):
-	def show_speed(self, speed):
-		self.speed = speed
-		if self.speed > 60:
-			print(f"{self.name}'s speed is {self.speed}. Over speed!!!!")
-		else:
-			print(f"{self.name}'s speed is {self.speed}")
+    def show_speed(self, speed):
+        self.speed = speed
+        if self.speed > 60:
+            print(f"{self.name}'s speed is {self.speed}. Over speed!!!!")
+        else:
+            print(f"{self.name}'s speed is {self.speed}")
+
 
 class WorkCar(Car):
-	def show_speed(self, speed):
-		self.speed = speed
-		if self.speed > 40:
-			print(f"{self.name}'s speed is {self.speed}. Over speed!!!!")
-		else:
-			print(f"{self.name}'s speed is {self.speed}")
+    def show_speed(self, speed):
+        self.speed = speed
+        if self.speed > 40:
+            print(f"{self.name}'s speed is {self.speed}. Over speed!!!!")
+        else:
+            print(f"{self.name}'s speed is {self.speed}")
+
 
 class SportCar(Car):
-	def __init__(self):
-		self.speed = 280
+    def __init__(self):
+        self.speed = 280
+
 
 class PoliceCar(Car):
-	def __init__(self):
-		self.speed = 180
-		self.color = 'blue'
-		self.name = "LADA"
-		self.is_police = True
+    def __init__(self):
+        self.speed = 180
+        self.color = 'blue'
+        self.name = "LADA"
+        self.is_police = True
 
-car_1C = Car(85, 'Blue', "LADA", False) 
+
+car_1C = Car(85, 'Blue', "LADA", False)
 car_1C.go()
 car_1C.stop()
 car_1C.turn('hospital')
@@ -63,9 +68,6 @@ car_5T = TownCar(70, 'white', 'NIVA', False)
 car_1C.show_speed()
 car_5T.show_speed(55)
 car_5T.show_speed(95)
-
-
-
 
 """4. Реализуйте базовый класс Car.
 у класса должны быть следующие атрибуты: speed, color, name, is_police (булево). 
